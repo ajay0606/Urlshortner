@@ -1,0 +1,65 @@
+{% extends "home.html" %}
+
+{% block body %}
+
+
+<div class="album py-5 bg-light back">
+    <div class="container ">
+
+        <div class="row">
+            {% for asset in object_list %}
+            <div class="col-md-4 ">
+
+                <div class="card mb-4 shadow-sm" style="float:right">
+                    <a href="{% url 'infra:demo_detail' asset.pk %}">
+                    <img src="{{asset.image.url}}" class="card-img-top" height="400px" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bolder">{{asset.title}}</h5>
+                        <p class="card-text">{{asset.description}}</p>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+<!--       
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+--> 
+        {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number  }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+
+
+{% endblock body %}
