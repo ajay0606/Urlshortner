@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from basic import views
+#from basic import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('<str:token>', views.Home, name='Home'),
-    path('', views.Make, name="Make new"),
+    path('', include('basic.urls')),
     path('', include('infra.urls')),
+#    path('<str:token>', views.Home, name='urlshort'),
+#    path('', views.Make, name="Make new"),
+    
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

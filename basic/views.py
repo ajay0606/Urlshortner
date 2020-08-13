@@ -8,10 +8,6 @@ from .shortner import Urlx
 import random
 
 
-def Home(request, token):
-    original_url = Url.objects.filter(short_url=token)[0]
-    return redirect(original_url.original_url)
-
 def Make(request):
     form = Urlform(request.POST)
     a = ''
@@ -24,4 +20,16 @@ def Make(request):
         else:
             form = Urlform()
             a = "Invalid URL"
-    return render(request, 'home.html', {'form': form, 'a':a})
+    return render(request, 'urlshort.html', {'form': form, 'a':a})
+
+
+def Home(request, token):
+    try:
+        original_url = Url.objects.filter(short_url=token)[0]
+        return redirect(original_url.original_url)
+    except IndexError as error:
+        return render(request, 'urlshort.html')
+    
+    
+        
+    

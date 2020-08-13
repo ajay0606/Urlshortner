@@ -11,19 +11,15 @@
             <div class="col-md-4 ">
 
                 <div class="card mb-4 shadow-sm" style="float:right">
-                    <a href="{% url 'infra:demo_detail' asset.pk %}">
+                    <a style="text-decoration: none; color: black;" href="{% url 'infra:demo_detail' asset.pk %}">
                     <img src="{{asset.image.url}}" class="card-img-top" height="400px" alt="...">
-                    </a>
+                   
                     <div class="card-body">
                         <h5 class="card-title font-weight-bolder">{{asset.title}}</h5>
                         <p class="card-text">{{asset.description}}</p>
                     </div>
-
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-
-                    </div>
+                </a>
+                    
                     
                 </div>
 

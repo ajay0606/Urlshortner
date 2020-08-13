@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -7,9 +7,9 @@ from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 
+
 @require_http_methods(["GET"])
 def about(request):
-    
     return render(request, 'about.html')
 
 @require_http_methods(["GET"])

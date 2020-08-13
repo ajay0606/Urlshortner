@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Zeus Infra</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        body{
+          background: linear-gradient(rgba(0, 0, 0, 0.534),rgba(128, 128, 128, 0.192));
+        }
+        
+    </style>
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand"> <a class="active" style="text-decoration: none; color: black;" href="{% url 'infra:demo_list' %}"> Zeus Infra </a></h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active " style="color:white;" href="{% url 'infra:demo_list' %}">Home</a>
+        <a class="nav-link active " style="color:white;" href="{% url 'basic:urlshort.html' %}">Url Shortner</a>
+        <a class="nav-link active" style="color:white;" href="{% url 'infra:about' %}">About Us</a>
+        <a class="nav-link active" style="color:white;" href="{% url 'infra:project' %}">Projects</a>
+        <a class="nav-link active" style="color:white;" href="{% url 'infra:contact' %}">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+      <h2>This program make long URL in to short URL </h2>
+    <form class="form-group" action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary mb-2" type="submit" name="buttun">save</button>
+        </form>
+         
+        <h1 id="linku">127.0.0.1:8000/{{ a }}</h1>
+<br><br>
+        <h3 style="color: dimgray;">Copy above link and search</h3>
+
+      </div>
+   
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        
+        
+        
+</body>
+</html>
+
+
+
